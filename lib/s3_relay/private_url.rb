@@ -6,7 +6,7 @@ module S3Relay
     def initialize(uuid, file, options={})
       filename =
         if file.include?(":")
-          filename.gsub(":", "%3A")
+          file.gsub(":", "%3A")
         else
           Addressable::URI.escape(file)
         end
