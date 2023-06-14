@@ -14,5 +14,6 @@ require "s3_relay/base"
 require "s3_relay/model"
 require "s3_relay/private_url"
 require "s3_relay/upload_presigner"
+require "s3_relay/uploads_helper"
 
 ActiveRecord::Base.extend S3Relay::Model
