@@ -4,7 +4,9 @@ module S3Relay
 
     initializer "s3_relay.action_controller" do |app|
       ActiveSupport.on_load :action_controller do
-        helper S3Relay::UploadsHelper if respond_to?(:helper)
+        S3Relay::Engine.config.to_prepare do
+          helper S3Relay::UploadsHelper if respond_to?(:helper)
+        end
       end
     end
   end
